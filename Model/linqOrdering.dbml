@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OrderingDB" Class="linqOrderingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=&quot;D:\Visual studio documents\Projects\Ordering\Ordering\App_Data\OrderingDB.mdf&quot;;Integrated Security=True;User Instance=True" SettingsObjectName="Model.Properties.Settings" SettingsPropertyName="OrderingDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="ProductsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Products" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prices" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_Order" Member="Orders" ThisKey="UserId" OtherKey="UserId" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[No of products]" Member="No_of_products" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total price]" Member="Total_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Order_OrderedProduct" Member="OrderedProducts" ThisKey="OrderId" OtherKey="OrderId" Type="OrderedProduct" />
+      <Association Name="aspnet_User_Order" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompletedOrder" Member="CompletedOrders">
+    <Type Name="CompletedOrder">
+      <Column Name="CompletedOrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[No of products]" Member="No_of_products" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total price]" Member="Total_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CompletedOrder_OrderedProduct" Member="OrderedProducts" ThisKey="CompletedOrderId" OtherKey="CompletedOrderId" Type="OrderedProduct" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FailedOrder" Member="FailedOrders">
+    <Type Name="FailedOrder">
+      <Column Name="FailedOrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[No of products]" Member="No_of_products" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total price]" Member="Total_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="FailedOrder_OrderedProduct" Member="OrderedProducts" ThisKey="FailedOrderId" OtherKey="FailedOrderId" Type="OrderedProduct" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderedProduct" Member="OrderedProducts">
+    <Type Name="OrderedProduct">
+      <Column Name="OrderedProductsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompletedOrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FailedOrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Products" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CompletedOrder_OrderedProduct" Member="CompletedOrder" ThisKey="CompletedOrderId" OtherKey="CompletedOrderId" Type="CompletedOrder" IsForeignKey="true" />
+      <Association Name="FailedOrder_OrderedProduct" Member="FailedOrder" ThisKey="FailedOrderId" OtherKey="FailedOrderId" Type="FailedOrder" IsForeignKey="true" />
+      <Association Name="Order_OrderedProduct" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

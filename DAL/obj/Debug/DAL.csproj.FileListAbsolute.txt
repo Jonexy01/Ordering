@@ -1,0 +1,7 @@
+D:\Visual studio documents\Projects\Ordering\DAL\bin\Debug\DAL.dll
+D:\Visual studio documents\Projects\Ordering\DAL\bin\Debug\DAL.pdb
+D:\Visual studio documents\Projects\Ordering\DAL\bin\Debug\Model.dll
+D:\Visual studio documents\Projects\Ordering\DAL\bin\Debug\Model.pdb
+D:\Visual studio documents\Projects\Ordering\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual studio documents\Projects\Ordering\DAL\obj\Debug\DAL.dll
+D:\Visual studio documents\Projects\Ordering\DAL\obj\Debug\DAL.pdb

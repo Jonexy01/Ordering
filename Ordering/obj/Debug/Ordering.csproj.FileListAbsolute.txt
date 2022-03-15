@@ -1,0 +1,11 @@
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\Ordering.dll
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\Ordering.pdb
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\BLL.dll
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\DAL.dll
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\Model.dll
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\BLL.pdb
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\DAL.pdb
+D:\Visual studio documents\Projects\Ordering\Ordering\bin\Model.pdb
+D:\Visual studio documents\Projects\Ordering\Ordering\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual studio documents\Projects\Ordering\Ordering\obj\Debug\Ordering.dll
+D:\Visual studio documents\Projects\Ordering\Ordering\obj\Debug\Ordering.pdb

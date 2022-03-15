@@ -1,0 +1,9 @@
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\BLL.dll
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\BLL.pdb
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\DAL.dll
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\Model.dll
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\DAL.pdb
+D:\Visual studio documents\Projects\Ordering\BLL\bin\Debug\Model.pdb
+D:\Visual studio documents\Projects\Ordering\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual studio documents\Projects\Ordering\BLL\obj\Debug\BLL.dll
+D:\Visual studio documents\Projects\Ordering\BLL\obj\Debug\BLL.pdb

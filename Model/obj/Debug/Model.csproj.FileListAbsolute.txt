@@ -1,0 +1,6 @@
+D:\Visual studio documents\Projects\Ordering\Model\bin\Debug\Model.dll.config
+D:\Visual studio documents\Projects\Ordering\Model\bin\Debug\Model.dll
+D:\Visual studio documents\Projects\Ordering\Model\bin\Debug\Model.pdb
+D:\Visual studio documents\Projects\Ordering\Model\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual studio documents\Projects\Ordering\Model\obj\Debug\Model.dll
+D:\Visual studio documents\Projects\Ordering\Model\obj\Debug\Model.pdb
